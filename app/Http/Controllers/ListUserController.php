@@ -22,6 +22,18 @@ class ListUserController extends Controller
             'telefone' => 'required|integer',
             'data_de_nascimento' => 'required|date',
             'password' => 'required|min:8'
+        ], [
+            'email.unique' => 'O endereço de e-mail já está sendo utilizado. Por favor, escolha outro.',
+            'name.required' => 'O campo nome é obrigatório.',
+            'sobrenome.required' => 'O campo sobrenome é obrigatório.',
+            'email.required' => 'O campo e-mail é obrigatório.',
+            'email.email' => 'Por favor, insira um endereço de e-mail válido.',
+            'telefone.required' => 'O campo telefone é obrigatório.',
+            'telefone.integer' => 'O campo telefone deve ser um número inteiro.',
+            'data_de_nascimento.required' => 'O campo data de nascimento é obrigatório.',
+            'data_de_nascimento.date' => 'O campo data de nascimento deve ser uma data válida.',
+            'password.required' => 'O campo senha é obrigatório.',
+            'password.min' => 'A senha deve ter no mínimo :min caracteres.',
         ]);
 
         $user = new ListUser();
@@ -57,6 +69,17 @@ class ListUserController extends Controller
             'telefone' => 'required|integer',
             'data_de_nascimento' => 'required|date',
             'password' => 'nullable|min:8'
+        ], [
+            'email.unique' => 'O endereço de e-mail já está sendo utilizado. Por favor, escolha outro.',
+            'name.required' => 'O campo nome é obrigatório.',
+            'sobrenome.required' => 'O campo sobrenome é obrigatório.',
+            'email.required' => 'O campo e-mail é obrigatório.',
+            'email.email' => 'Por favor, insira um endereço de e-mail válido.',
+            'telefone.required' => 'O campo telefone é obrigatório.',
+            'telefone.integer' => 'O campo telefone deve ser um número inteiro.',
+            'data_de_nascimento.required' => 'O campo data de nascimento é obrigatório.',
+            'data_de_nascimento.date' => 'O campo data de nascimento deve ser uma data válida.',
+            'password.min' => 'A senha deve ter no mínimo :min caracteres.',
         ]);
 
         $user = ListUser::findOrFail($id);

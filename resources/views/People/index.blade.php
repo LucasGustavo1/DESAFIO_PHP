@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -21,34 +21,43 @@
                     </div>
                 @endif
 
-                @if (session('erro'))
-                    <div class="alert alert-danger">
-                        {{ session('erro') }}
+                @if ($errors->any())
+                    <div>
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
-
                 <form action="{{ route('people.store') }}" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="name">Nome</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name"
+                            value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
                         <label for="sobrenome">Sobrenome</label>
-                        <input type="text" class="form-control" id="sobrenome" name="sobrenome">
+                        <input type="text" class="form-control" id="sobrenome" name="sobrenome"
+                            value="{{ old('sobrenome') }}">
+
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" name="email">
+                        <input type="email" class="form-control" id="email" name="email"
+                            value="{{ old('email') }}">
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
-                        <input type="text" class="form-control" id="telefone" name="telefone">
+                        <input type="text" class="form-control" id="telefone" name="telefone"
+                            value="{{ old('telefone') }}">
+
                     </div>
                     <div class="form-group">
                         <label for="data_de_nascimento">Data de Nascimento</label>
                         <input type="date" class="form-control" id="data_de_nascimento" name="data_de_nascimento"
-                            required>
+                            value="{{ old('data_de_nascimento') }}">
                     </div>
                     <div class="form-group">
                         <label for="password">Senha</label>
@@ -59,9 +68,7 @@
 
                 <table class="table table-striped mt-4">
                     <thead>
-
                         <tr>
-
                             <th>ID</th>
                             <th>Nome</th>
                             <th>Sobrenome</th>
@@ -86,11 +93,9 @@
                                 <td>{{ $user->updated_at }}</td>
                                 <td>
                                     <a href="{{ route('people.show', $user->id) }}"
-                                        class="btn btn-info btn-sm mt-2 ">Detalhes</a>
-
+                                        class="btn btn-info btn-sm mt-2">Detalhes</a>
                                     <a href="{{ route('people.edit', $user->id) }}"
                                         class="btn btn-warning btn-sm mt-2 mb-2">Editar</a>
-
                                     <form action="{{ route('people.destroy', $user->id) }}" method="POST"
                                         style="display:inline-block;">
                                         @csrf
