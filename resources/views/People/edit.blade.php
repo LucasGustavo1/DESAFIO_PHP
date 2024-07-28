@@ -26,27 +26,27 @@
                     <div class="form-group">
                         <label for="name">Nome</label>
                         <input type="text" class="form-control" id="name" name="name"
-                            value="{{ $user->name }}" required>
+                            value="{{ $user->name }}">
                     </div>
                     <div class="form-group">
                         <label for="sobrenome">Sobrenome</label>
                         <input type="text" class="form-control" id="sobrenome" name="sobrenome"
-                            value="{{ $user->sobrenome }}" required>
+                            value="{{ $user->sobrenome }}">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
                         <input type="email" class="form-control" id="email" name="email"
-                            value="{{ $user->email }}" required>
+                            value="{{ $user->email }}">
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone</label>
                         <input type="text" class="form-control" id="telefone" name="telefone"
-                            value="{{ $user->telefone }}" required>
+                            value="{{ $user->telefone }}">
                     </div>
                     <div class="form-group">
                         <label for="data_de_nascimento">Data de Nascimento</label>
                         <input type="date" class="form-control" id="data_de_nascimento" name="data_de_nascimento"
-                            value="{{ $user->data_de_nascimento }}" required>
+                            value="{{ $user->data_de_nascimento }}">
                     </div>
                     <div class="form-group">
                         <label for="password">Senha (deixe em branco para não alterar)</label>
