@@ -45,3 +45,16 @@ Download do xampp
 https://www.apachefriends.org/pt_br/index.html
 
 
+
+Configuração para criar banco de dados :
+
+acesse arquivo .env 
+
+Vá em DB_DATABASE,certifique-se que esteja leader . 
+
+Vá ao xampp , crie um banco de dados com mesmo nome do arquivo .env (leader)
+
+execute uma migração com seguinte comando no terminal da sua IDE : php artisan migrate . Dessa forma , criará sua tabela no banco de dados com as colunas declaradas no projeto . 
+
+
+
