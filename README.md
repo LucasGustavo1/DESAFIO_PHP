@@ -37,3 +37,11 @@ Download do laravel via composer
 
 composer global require laravel/installer
 
+
+
+Download do xampp
+
+
+https://www.apachefriends.org/pt_br/index.html
+
+
